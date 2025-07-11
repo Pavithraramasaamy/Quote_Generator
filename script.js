@@ -24,23 +24,18 @@ const quotes = [
 const quoteText = document.getElementById('quote');
 const authorText = document.getElementById('author');
 const newQuoteBtn = document.getElementById('new-quote');
-const tweetBtn = document.getElementById('tweet');
 
 newQuoteBtn.addEventListener('click', () => {
   const random = Math.floor(Math.random() * quotes.length);
   const quote = quotes[random];
   
-  // Simple fade-out and in effect
   quoteText.style.opacity = 0;
   authorText.style.opacity = 0;
-  
+
   setTimeout(() => {
     quoteText.innerText = quote.text;
     authorText.innerText = `- ${quote.author}`;
     quoteText.style.opacity = 1;
     authorText.style.opacity = 1;
-
-    // Update tweet link
-    tweetBtn.href = `https://twitter.com/intent/tweet?text="${encodeURIComponent(quote.text)}" - ${encodeURIComponent(quote.author)}`;
   }, 300);
 });
