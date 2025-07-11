@@ -164,7 +164,6 @@ newQuoteBtn.addEventListener('click', () => {
     authorText.innerText = `- ${quote.author}`;
     quoteText.style.opacity = 1;
     authorText.style.opacity = 1;
-    tweetBtn.href = `https://twitter.com/intent/tweet?text="${encodeURIComponent(quote.text)}" - ${encodeURIComponent(quote.author)}`;
   }, 300);
 });
 
